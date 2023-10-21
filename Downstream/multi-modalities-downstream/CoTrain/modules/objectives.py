@@ -757,6 +757,7 @@ def compute_openend_vqa(pl_module, batch):
     else:
         raise NotImplementedError("Not implemented for model {}".format(pl_module))
     vqa_labels = torch.tensor(batch["vqa_labels"]).to(pl_module.device).long()
+    print(batch)
     # print(vqa_logits.size())
     # print(vqa_labels)
     vqa_loss = F.cross_entropy(vqa_logits, vqa_labels)
