@@ -14,12 +14,12 @@ per_gpu_batchsize=16 \
 clip_finetune_msrvttqa \
 num_frames=8 \
 num_workers=8 \
-batch_size=512 \
+batch_size=64 \
 max_epoch=20 \
 model_dir=/home/data/models/int_moma/models/vtc_msrvttqa_lr1e5 \
 log_dir=/home/data/models/int_moma/result/vtc_msrvttqa_lr1e5 \
 save_checkpoints_interval=1000 \
-learning_rate=1e-5 \
+learning_rate=1e-6 \
 clip_qa_type=vtc_cap \
 save_last=False \
 save_top_k=0 \
