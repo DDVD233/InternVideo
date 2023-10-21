@@ -4,10 +4,9 @@
 
 import torch
 import CoTrain.modules.InternVideo as internvideo
-from CoTrain.datasets import K400VideoDataset
 
 
-def text_prompt(data = K400VideoDataset.classes(), prompt_type='all'):
+def text_prompt(data =None, prompt_type='all'):
     if prompt_type == 'all':
         text_aug = [f"a photo of action {{}}", f"a picture of action {{}}", f"Human action of {{}}", f"{{}}, an action",
                     f"{{}} this is an action", f"{{}}, a video of action", f"Playing action of {{}}", f"{{}}",
