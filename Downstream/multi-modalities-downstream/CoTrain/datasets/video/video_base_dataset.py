@@ -95,7 +95,7 @@ class BaseDataset(torch.utils.data.Dataset):
 
     def _get_video_path(self, sample):
         if self.names[0] in ['msrvtt_train', 'msrvtt_test', 'msrvtt_val']:
-            return os.path.join(self.data_dir, 'videos', 'all', sample.name + '.mp4'), sample.name + '.mp4'
+            return os.path.join(self.data_dir, 'videos', 'all', sample.filename + '.mp4'), sample.filename + '.mp4'
         else:
             return os.path.join(self.data_dir, 'videos', 'all', str(sample['video_id']) + '.mp4'), str(sample['video_id']) + '.mp4'
 
