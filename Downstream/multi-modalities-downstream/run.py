@@ -72,6 +72,17 @@ def main(_config):
         version="version_0",
     )
 
+    # Load model from checkpoint at _config["load_path"]
+    if isinstance(_config["load_path"], str):
+        fs = get_filesystem(_config["load_path"])
+        if fs.exists(_config["load_path"]):
+            with fs.open(_config["load_path"], "rb") as f:
+                ckpt = torch.load(f, map_location='cpu')
+
+            model.load_state_dict(ckpt["state_dict"], strict=False)
+        else:
+            raise FileNotFoundError(f"File {_config['load_path']} does not exist")
+
     lr_callback = pl.callbacks.LearningRateMonitor(logging_interval="step")
 
     summary_callback = pl.callbacks.ModelSummary(max_depth=1)
