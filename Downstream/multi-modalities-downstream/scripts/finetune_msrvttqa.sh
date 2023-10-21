@@ -7,7 +7,7 @@ LOG_FILE="${OUTPUT_DIR}/logs/${JOB_NAME}/log.txt"
 N_TASKS=`echo "${NUM_NODES}*${NUM_GPUS}" | bc`
 
 python run.py with \
-data_root=./meta_data \
+data_root=/home/data/datasets/moma_qa \
 num_gpus=4 \
 num_nodes=1 \
 per_gpu_batchsize=16 \
