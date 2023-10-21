@@ -55,7 +55,7 @@ def config():
 
     # Text Setting
     vqav2_label_size = 3129
-    msrvttqa_label_size = 1501
+    msrvttqa_label_size = 216
     max_text_len = 40  # original: 40, 200: for long sentences/paragraph
     tokenizer = "bert-base-uncased"
     vocab_size = 30522
@@ -283,7 +283,7 @@ def task_finetune_msrvttqa():
     image_datasets = []
     loss_names = _loss_names({"openend_vqa": 1})
     batch_size = 512
-    msrvttqa_label_size = 1501  # 1501 / 4540
+    msrvttqa_label_size = 216  # 1501 / 4540
     max_epoch = 20
     max_steps = None
     warmup_steps = 0.1  # 0.1
@@ -604,7 +604,7 @@ def clip_finetune_msrvttqa():
     image_datasets = []
     loss_names = _loss_names({"openend_vqa": 1})
     batch_size = 512
-    msrvttqa_label_size = 1501  # 1501 / 4540
+    msrvttqa_label_size = 216  # 1501 / 4540
     max_epoch = 20
     max_steps = None
     warmup_steps = 0.1  # 0.1
