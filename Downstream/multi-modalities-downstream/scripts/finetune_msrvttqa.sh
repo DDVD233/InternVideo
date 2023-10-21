@@ -10,11 +10,11 @@ python run.py with \
 data_root=/home/data/datasets/moma_qa \
 num_gpus=4 \
 num_nodes=1 \
-per_gpu_batchsize=16 \
+per_gpu_batchsize=8 \
 clip_finetune_msrvttqa \
 num_frames=8 \
 num_workers=8 \
-batch_size=64 \
+batch_size=32 \
 max_epoch=20 \
 model_dir=/home/data/models/int_moma/models/vtc_msrvttqa_lr1e5 \
 log_dir=/home/data/models/int_moma/result/vtc_msrvttqa_lr1e5 \
