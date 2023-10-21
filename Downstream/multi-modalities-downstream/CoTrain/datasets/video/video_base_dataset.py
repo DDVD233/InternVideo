@@ -395,7 +395,7 @@ def sample_frames(num_frames, vlen, sample='rand', fix_start=None):
     for idx, interv in enumerate(intervals[:-1]):
         ranges.append((interv, intervals[idx + 1] - 1))
     if sample == 'rand':
-        frame_idxs = [random.choice(range(x[0], x[1])) for x in ranges]
+        frame_idxs = [random.choice(range(x[0], x[1])) if x[0] < x[1] else x[0] for x in ranges]
     elif fix_start is not None:
         frame_idxs = [x[0] + fix_start for x in ranges]
     elif sample == 'uniform':
