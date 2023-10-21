@@ -102,6 +102,7 @@ class MSRVTTQADataset(BaseDataset):
             "vqa_answer": answers,
             "vqa_labels": labels,
             "vqa_scores": scores,
+            "question_type": sample['question_type'],
             "qid": qid,
             # "ans_clip_id": self.ans_clip_id,
         }
