@@ -18,7 +18,6 @@ batch_size=512 \
 max_epoch=20 \
 model_dir=/home/data/models/int_moma/models/vtc_msrvttqa_lr1e5 \
 log_dir=/home/data/models/int_moma/result/vtc_msrvttqa_lr1e5 \
-resume_from=/home/data/models/internvideo/msrvtt.ckpt \
 save_checkpoints_interval=1000 \
 learning_rate=1e-5 \
 clip_qa_type=vtc_cap \
