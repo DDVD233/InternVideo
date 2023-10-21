@@ -36,7 +36,7 @@ def set_split_metrics(pl_module, split, loss_names):
             setattr(pl_module, f"{split}_vqa_score", VQAScore())
             setattr(pl_module, f"{split}_vqa_loss", Scalar())
             setattr(pl_module, f"{split}_{k}_loss", Scalar())
-            setattr(pl_module, f"{split}_{k}_accuracy", Accuracy(ignore_index=-100))
+            setattr(pl_module, f"{split}_{k}_accuracy", Accuracy(task='multiclass', ignore_index=-100))
         elif k == "vcop":
             setattr(pl_module, f"{split}_vcop_score", VQAScore())
             setattr(pl_module, f"{split}_vcop_loss", Scalar())
