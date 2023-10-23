@@ -617,6 +617,26 @@ def clip_finetune_msrvttqa():
     clip = "/mnt/lustre/share_data/likunchang.vendor/code/EVL/ViT-B-16.pt"
     clip_type = "ori"
 
+@ex.named_config
+def clip_test_msrvttqa():
+    exp_name = "clip_finetune_msrvtt_qa"
+    video_datasets = ["msrvttqa"]
+    image_datasets = []
+    loss_names = _loss_names({"openend_vqa": 1})
+    batch_size = 512
+    msrvttqa_label_size = 216  # 1501 / 4540
+    max_epoch = 20
+    max_steps = None
+    warmup_steps = 0.1  # 0.1
+    draw_false_image = 1
+    draw_false_text = 1
+    learning_rate = 1e-4  # 1e-4 normal
+    val_check_interval = 1.0
+    lr_mult = 10
+    max_text_len = 77
+    clip = "/mnt/lustre/share_data/likunchang.vendor/code/EVL/ViT-B-16.pt"
+    clip_type = "ori"
+    test_only = True
 
 @ex.named_config
 def clip_finetune_tgifqa():
