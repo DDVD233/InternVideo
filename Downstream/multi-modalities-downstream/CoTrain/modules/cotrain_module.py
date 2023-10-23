@@ -500,6 +500,7 @@ class CoTrainTransformerSS(pl.LightningModule):
 
         if self.hparams.config["loss_names"]["vqa"] > 0:
             ret.update(objectives.vqa_test_step(self, batch, image_output))
+        print(ret)
 
         return ret
 
